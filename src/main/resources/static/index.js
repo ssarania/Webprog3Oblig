@@ -12,9 +12,7 @@ function kjopBillett() {
         epost: $("#epost").val()
     };
 
-    // validering av input
-
-    // splitter e-post for å sjekke om den inneholder @
+    // e-post:sjekke om den inneholder @
     let epostGyldig = $("#epost").html = enBillett.epost.split("@");
     let feilmelding = false;
 
@@ -56,7 +54,7 @@ function kjopBillett() {
         $("#etternavnFeil").html("");
     }
 
-    // TELEFONNR
+    // TELEFONNUMMER
     if (isNaN(enBillett.telefonnr) || enBillett.telefonnr === "" || enBillett.telefonnr.length != 8) {
         $("#telefonnrFeil").html("Telefonnummer må inneholde 8 tall");
         feilmelding = true;
@@ -75,7 +73,7 @@ function kjopBillett() {
         $("#epostFeil").html("");
     }
 
-    // hvis feilmeldingen ikke er true vil all input nullstilles:
+    // hvis feilmeldingen er false vil all input nullstilles:
     if (feilmelding === false) {
         $("#antall").val("");
         $("#film").val($("#feilFilm").val());

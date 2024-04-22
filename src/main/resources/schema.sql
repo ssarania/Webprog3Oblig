@@ -1,3 +1,4 @@
+<!-- SQL skript
 CREATE TABLE Billett
 (
     id INTEGER AUTO_INCREMENT NOT NULL,

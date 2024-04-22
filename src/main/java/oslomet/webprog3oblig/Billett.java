@@ -19,7 +19,6 @@ public class Billett {
     }
 
     public Billett() {
-        //skal være tom
     }
 
     public int getAntall() {
