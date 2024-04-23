@@ -1,36 +1,25 @@
-# Project Title
+# Webapplikasjon for kinobilletter
 
-Brief description or overview of the project.
+Dette er en webapplikasjon som lar brukere bestille kinobilletter online.
 
-## Table of Contents
+## Funksjoner
 
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- Brukere kan velge film fra en liste og angi antall billetter de ønsker å kjøpe.
+- Skjemaet valideres for å sikre gyldig inndata før bestilling blir fullført.
+- Alle bestilte billetter vises i en tabell på samme side.
+- Administratoren har muligheten til å slette alle billetter fra databasen.
 
-## Getting Started
+## Webutviklingsteknologier
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+- HTML
+- CSS (Bootstrap)
+- JavaScript (jQuery)
+- Spring Boot (Java)
+- H2 Database
 
-## Prerequisites
+## Installasjon og kjøring
 
-List any software or tools that need to be installed before running the project.
-
-## Installation
-
-Step-by-step guide on how to install or set up the project.
-
-## Usage
-
-Instructions on how to use the project, including any important details or commands.
-
-## Contributing
-
-Explain how others can contribute to the project, including guidelines for pull requests and code style.
-
-## License
-
-Specify the project's license, along with any additional terms or disclaimers.
+1. Last ned eller klon prosjektet fra GitHub.
+2. Åpne prosjektmappen i en Java IDE.
+3. Bygg og kjør prosjektet.
+4. Åpne nettleseren og gå til [http://localhost:8080](http://localhost:8080) for å bruke applikasjonen.
