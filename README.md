@@ -25,5 +25,6 @@ Dette er en webapplikasjon som lar brukere bestille kinobilletter online.
 4. Åpne nettleseren og gå til [http://localhost:8080](http://localhost:8080) for å bruke applikasjonen.
 
 ## YouTube
+Her kan du se hele videoen av meg kjøpe og slette bildene. 
 - https://youtu.be/znThnZ0DnLU?si=VSls287PN87qOIk3
   
