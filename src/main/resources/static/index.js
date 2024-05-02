@@ -32,46 +32,42 @@ function kjopBillett() {
         $("#ikkeValgtFilm").html("");
     }
 
-    // FORNAVN
-    if (!isNaN(enBillett.fornavn) || enBillett.fornavn === "") {
-        $("#fornavnFeil").html("Må skrive noe inn i fornavn");
-        feilmelding = true;
-    } else if (enBillett.fornavn.length < 2) { //(fornavnLengde.length < 2)
-        $("#fornavnFeil").html("Fornavn for kort");
-        feilmelding = true;
-    } else {
-        $("#fornavnFeil").html("");
-    }
-
-    //ETTERNAVN
-    if (!isNaN(enBillett.etternavn) || enBillett.etternavn === "") {
-        $("#etternavnFeil").html("Må skrive noe inn i etternavn");
-        feilmelding = true;
-    } else if (enBillett.etternavn.length < 2) {
-        $("#etternavnFeil").html("Etternavn for kort");
-        feilmelding = true;
-    } else {
-        $("#etternavnFeil").html("");
-    }
-
     // TELEFONNUMMER
-    if (isNaN(enBillett.telefonnr) || enBillett.telefonnr === "" || enBillett.telefonnr.length != 8) {
-        $("#telefonnrFeil").html("Telefonnummer må inneholde 8 tall");
+    const telefonRegex = /^\d{8}$/;
+    if (!telefonRegex.test(enBillett.telefonnr) || enBillett.telefonnr === "") {
+        $("#telefonnrFeil").html("Må skrive inn et gyldig telefonnummer på 8 siffer");
         feilmelding = true;
     } else {
         $("#telefonnrFeil").html("");
     }
 
-    // E-POST
-    if (!isNaN(enBillett.epost) || enBillett.epost === "") {
-        $("#epostFeil").html("Må skrive noe inn i e-post");
+    // FORNAVN
+    const fornavnRegex = /^[a-zA-ZæøåÆØÅ\s-]{2,}$/;
+    if (!fornavnRegex.test(enBillett.fornavn) || enBillett.fornavn === "") {
+        $("#fornavnFeil").html("Må skrive inn et gyldig fornavn (minst 2 tegn)");
         feilmelding = true;
-    } else if (enBillett.epost.length < 6 || epostGyldig.length != 2) {
-        $("#epostFeil").html("E-post er for kort eller mangler @");
+    } else {
+        $("#fornavnFeil").html("");
+    }
+
+    // ETTERNAVN
+    const etternavnRegex = /^[a-zA-ZæøåÆØÅ\s-]{2,}$/;
+    if (!etternavnRegex.test(enBillett.etternavn) || enBillett.etternavn === "") {
+        $("#etternavnFeil").html("Må skrive inn et gyldig etternavn (minst 2 tegn)");
+        feilmelding = true;
+    } else {
+        $("#etternavnFeil").html("");
+    }
+
+    // E-POST
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(enBillett.epost) || enBillett.epost === "") {
+        $("#epostFeil").html("Må skrive inn en gyldig e-postadresse");
         feilmelding = true;
     } else {
         $("#epostFeil").html("");
     }
+
 
     // hvis feilmeldingen er false vil all input nullstilles:
     if (feilmelding === false) {
