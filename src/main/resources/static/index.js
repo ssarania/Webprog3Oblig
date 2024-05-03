@@ -35,25 +35,25 @@ function kjopBillett() {
     // TELEFONNUMMER
     const telefonRegex = /^\d{8}$/;
     if (!telefonRegex.test(enBillett.telefonnr) || enBillett.telefonnr === "") {
-        $("#telefonnrFeil").html("Må skrive inn et gyldig telefonnummer på 8 siffer");
+        $("#telefonnrFeil").html("Skriv inn et gyldig telefonnummer på 8 siffer");
         feilmelding = true;
     } else {
         $("#telefonnrFeil").html("");
     }
 
     // FORNAVN
-    const fornavnRegex = /^[a-zA-ZæøåÆØÅ\s-]{2,}$/;
+    const fornavnRegex = /^[a-zA-ZæøåÆØÅ\s-]+$/;
     if (!fornavnRegex.test(enBillett.fornavn) || enBillett.fornavn === "") {
-        $("#fornavnFeil").html("Må skrive inn et gyldig fornavn (minst 2 tegn)");
+        $("#fornavnFeil").html("Skriv inn et gyldig fornavn");
         feilmelding = true;
     } else {
         $("#fornavnFeil").html("");
     }
 
     // ETTERNAVN
-    const etternavnRegex = /^[a-zA-ZæøåÆØÅ\s-]{2,}$/;
+    const etternavnRegex = /^[a-zA-ZæøåÆØÅ\s-]+$/;
     if (!etternavnRegex.test(enBillett.etternavn) || enBillett.etternavn === "") {
-        $("#etternavnFeil").html("Må skrive inn et gyldig etternavn (minst 2 tegn)");
+        $("#etternavnFeil").html("Skriv inn et gyldig etternavn");
         feilmelding = true;
     } else {
         $("#etternavnFeil").html("");
@@ -62,7 +62,7 @@ function kjopBillett() {
     // E-POST
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(enBillett.epost) || enBillett.epost === "") {
-        $("#epostFeil").html("Må skrive inn en gyldig e-postadresse");
+        $("#epostFeil").html("Skriv inn en gyldig e-post");
         feilmelding = true;
     } else {
         $("#epostFeil").html("");
