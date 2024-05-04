@@ -18,7 +18,7 @@ function kjopBillett() {
 
     // ANTALL
     if ((isNaN(enBillett.antall) || enBillett.antall <= 0) || enBillett.antall === null) {
-        $("#ikkeTall").html("Feil i antall. Må være et tall på 1 eller høyere");
+        $("#ikkeTall").html("Feil i antall. Må være et tall 1 eller høyere");
         feilmelding = true;
     } else {
         $("#ikkeTall").html(null);
@@ -60,8 +60,8 @@ function kjopBillett() {
     }
 
     // E-POST
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(enBillett.epost) || enBillett.epost === "") {
+    const epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!epostRegex.test(enBillett.epost) || enBillett.epost === "") {
         $("#epostFeil").html("Skriv inn en gyldig e-post");
         feilmelding = true;
     } else {
