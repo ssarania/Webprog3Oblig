@@ -26,4 +26,4 @@ Dette er en webapplikasjon som lar brukere bestille kinobilletter online.
 
 ## YouTube
 Her kan du se hele videoen av meg kjøpe og slette billettene. 
-  
+https://youtu.be/Xp8jdNcbNDI
