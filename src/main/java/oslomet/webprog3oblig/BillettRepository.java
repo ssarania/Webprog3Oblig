@@ -13,7 +13,7 @@ public class BillettRepository {
     @Autowired
     public JdbcTemplate db;
 
-    public void lagreBillett (Billett billett) {
+    public void lagreBillett(Billett billett) {
         String sql = "INSERT INTO Billett (antall, film, fornavn, etternavn, telefonnr, epost)" +
                 "VALUES (?,?,?,?,?,?)";
         db.update(sql, billett.getAntall(), billett.getFilm(), billett.getFornavn(), billett.getEtternavn(),
@@ -21,8 +21,9 @@ public class BillettRepository {
     }
 
     public List<Billett> hentAlle() {
-        String sql = "SELECT * FROM Billett";
-        return db.query(sql, new BeanPropertyRowMapper(Billett.class));
+        String sql = "SELECT * FROM Billett ORDER BY etternavn ASC"; // Endring her
+        List<Billett> alleBilletter = db.query(sql, new BeanPropertyRowMapper(Billett.class));
+        return alleBilletter;
     }
 
     public void slettAlleBilletter() {
